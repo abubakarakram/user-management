@@ -1,0 +1,13 @@
+
+# mysql
+spring:
+  datasource:
+    url:  ${egw.datasource.url:jdbc:mysql://usermanagement.cofnhdktryla.us-east-1.rds.amazonaws.com:3306/usermanagement}
+    username: admin
+    password: rootroot
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto:
+        update
+
