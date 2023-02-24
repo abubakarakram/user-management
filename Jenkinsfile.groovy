@@ -15,13 +15,13 @@ pipeline {
             }
         }
         stage('Login') {
+            steps {
+            withCredentials([string(credentialsId: 'dockerPassword', variable: 'dockerPassword')])
 
-            withCredentials([string(credentialsId: 'dockerPassword', variable: 'dockerPassword')]) {
 
 
-                steps {
                     sh ' docker login -u abubakar243 -p ${dockerPassword}'
-                }
+
             }
         }
         stage('Push') {
