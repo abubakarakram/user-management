@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+        label 'main-host'
+    }
     options {
         buildDiscarder(logRotator(numToKeepStr: '5'))
     }
