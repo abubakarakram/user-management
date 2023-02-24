@@ -1,5 +1,3 @@
-
-
 pipeline {
     agent any
     options {
@@ -16,11 +14,11 @@ pipeline {
         }
         stage('Login') {
             steps {
-            withCredentials([string(credentialsId: 'dockerPassword', variable: 'dockerPassword')])
+                withCredentials([string(credentialsId: 'dockerPassword', variable: 'dockerPassword')])
 
-
-
-                    sh ' docker login -u abubakar243 -p ${dockerPassword}'
+                        {
+                            sh ' docker login -u abubakar243 -p ${dockerPassword}'
+                        }
 
             }
         }
