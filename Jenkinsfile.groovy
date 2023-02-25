@@ -9,10 +9,10 @@ pipeline {
         stage('Login') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'dockerPassword', passwordVariable: 'dockerPassword')]) {
+steps {
 
-
-                    bat 'docker login -u abubakar243 -p ${dockerPassword}'
-
+    bat 'docker login -u abubakar243 -p ${dockerPassword}'
+}
 
                 }
             }
