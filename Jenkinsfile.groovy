@@ -1,19 +1,18 @@
-
-    pipeline {
-        agent any
-        stages {
-            stage('Build') {
-                steps {
-                    bat 'docker build -t abubakar243/jenkins-docker-hub .'
-                }
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                bat 'docker build -t abubakar243/jenkins-docker-hub .'
             }
-            stage('Login') {
-                steps {
-                    withCredentials([string(credentialsId: 'dockerPassword', passwordVariable: 'dockerPassword')])
+        }
+        stage('Login') {
+            steps {
+                withCredentials([usernamePassword(credentialsId: 'dockerPassword', passwordVariable: 'dockerPassword')]) {
 
-                            {
-                                bat 'docker login -u abubakar243 -p $dockerPassword'
-                            }
+
+                    bat 'docker login -u abubakar243 -p ${dockerPassword}'
+
 
                 }
             }
@@ -27,5 +26,5 @@
         }
 
 
-
+    }
 }
