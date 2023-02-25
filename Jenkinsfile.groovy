@@ -28,7 +28,15 @@
                     sh 'docker push abubakar243/jenkins-docker-hub'
                 }
             }
+
+            stage('logout')
+                    {
+                        steps{
+                            sh 'docker logout'
+                        }
+                    }
         }
 
-    }
 
+
+}
