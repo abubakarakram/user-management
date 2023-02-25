@@ -12,7 +12,7 @@
                     withCredentials([string(credentialsId: 'dockerPassword', variable: 'dockerPassword')])
 
                             {
-                                sh ' docker login -u abubakar243 -p ${dockerPassword}'
+                                sh 'docker login -u abubakar243 -p ${dockerPassword}'
                             }
 
                 }
@@ -23,12 +23,7 @@
                 }
             }
 
-            stage('logout')
-                    {
-                        steps{
-                            sh 'docker logout'
-                        }
-                    }
+
         }
 
 
