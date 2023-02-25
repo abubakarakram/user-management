@@ -1,11 +1,11 @@
 pipeline {
     agent any
-    stages {
+
         stage('Build') {
             steps {
                 bat 'docker build -t abubakar243/jenkins-docker-hub .'
             }
-        }
+
         stage('Login') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'dockerPassword', passwordVariable: 'dockerPassword')]) {
