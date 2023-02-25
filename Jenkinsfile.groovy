@@ -4,7 +4,7 @@
         stages {
             stage('Build') {
                 steps {
-                    sh 'docker build -t abubakar243/jenkins-docker-hub .'
+                    bat 'docker build -t abubakar243/jenkins-docker-hub .'
                 }
             }
             stage('Login') {
@@ -12,14 +12,14 @@
                     withCredentials([string(credentialsId: 'dockerPassword', variable: 'dockerPassword')])
 
                             {
-                                sh 'docker login -u abubakar243 -p ${dockerPassword}'
+                                bat 'docker login -u abubakar243 -p ${dockerPassword}'
                             }
 
                 }
             }
             stage('Push') {
                 steps {
-                    sh 'docker push abubakar243/jenkins-docker-hub'
+                    bat 'docker push abubakar243/jenkins-docker-hub'
                 }
             }
 
