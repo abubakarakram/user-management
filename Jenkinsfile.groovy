@@ -1,6 +1,6 @@
 pipeline {
     agent any
-
+    stages {
         stage('Build') {
             steps {
                 bat 'docker build -t abubakar243/jenkins-docker-hub .'
@@ -17,15 +17,14 @@ pipeline {
                 }
             }
         }
-            stage('Push') {
-                steps {
-                    bat 'docker push abubakar243/jenkins-docker-hub'
-                }
+        stage('Push') {
+            steps {
+                bat 'docker push abubakar243/jenkins-docker-hub'
             }
+        }
 
 
-
-
+    }
 
 
 }
