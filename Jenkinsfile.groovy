@@ -12,7 +12,7 @@
                     withCredentials([string(credentialsId: 'dockerPassword', passwordVariable: 'dockerPassword')])
 
                             {
-                                bat 'docker login -u abubakar243 -p ${dockerPassword}'
+                                bat 'docker login -u abubakar243 -p $dockerPassword'
                             }
 
                 }
