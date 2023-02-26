@@ -10,7 +10,7 @@ pipeline {
 
                 checkout([$class: 'GitSCM', branches: [[name: 'master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'github-access-token', url: 'https://github.com/abubakarakram/user-management.git']]])
                 bat 'mvn clean package'
-                bat 'echo ${env.BRANCH_NAME}'
+                bat "set"
             }
         }
         stage('Build') {
@@ -23,7 +23,7 @@ pipeline {
                 withCredentials([string(credentialsId: 'passwordId', variable: 'dockerPassword')]) {
 
 
-                        bat 'type ${dockerPassword} | docker login -u abubakar243 --password-stdin'
+                        bat 'type password.txt | docker login -u abubakar243 --password-stdin'
 
 
                 }
