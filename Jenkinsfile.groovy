@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Push') {
             steps {
-                bat 'docker push abubakar243/jenkins-docker-hub'
+                bat 'docker push abubakar243/jenkins-docker-hub:latest'
             }
         }
 
