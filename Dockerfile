@@ -7,7 +7,7 @@ COPY pom.xml ./
 COPY src ./src
 #
 #CMD ["./mvnw","spring-boot:run"]
-CMD ["./mvnw","package"]
+CMD ["mvn","package"]
 
 
 #FROM eclipse-temurin:17-jdk-alpine AS runner
