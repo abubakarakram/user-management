@@ -5,7 +5,7 @@ EXPOSE 8080
 ADD target/user-mangement-0.0.1-SNAPSHOT.jar user-management.jar
 
 
-ENTRYPOINT ["java", "-jar", "/user-management.jar"]
+ENTRYPOINT ["java", "-jar", "user-management.jar"]
 
 #RUN ./mvnw install
 
