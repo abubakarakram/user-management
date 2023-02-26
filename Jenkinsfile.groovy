@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    tools:{
+    tools{
        maven 'maven-9'
     }
 
@@ -8,7 +8,7 @@ pipeline {
         stage('checkout') {
             steps {
 
-                checkout([$class: 'GitSCM', branches: [[name: env.branchName]], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'github-access-token', url: 'https://github.com/abubakarakram/user-management.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: env.BRANCH_NAME]], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'github-access-token', url: 'https://github.com/abubakarakram/user-management.git']]])
                 bat 'mvn clean package'
                 bat 'echo ${env.BRANCH_NAME}'
             }
