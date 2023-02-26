@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat 'docker build -t abubakar243/jenkins-docker-hub .'
+                bat 'docker build -t abubakar243/user-management .'
             }
         }
         stage('Login') {
