@@ -2,7 +2,8 @@
 # mysql
 spring:
   datasource:
-    url:  ${egw.datasource.url:jdbc:mysql://usermanagement.cofnhdktryla.us-east-1.rds.amazonaws.com:3306/usermanagement}
+#    url:  ${egw.datasource.url:jdbc:mysql://usermanagement.cofnhdktryla.us-east-1.rds.amazonaws.com:3306/usermanagement}
+    url: jdbc:mysql://localhost:3306/usermanager
     username: admin
     password: rootroot
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -11,3 +12,5 @@ spring:
       ddl-auto:
         update
 
+server:
+  port: 8081

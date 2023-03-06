@@ -35,6 +35,12 @@ pipeline {
                 bat 'docker push abubakar243/jenkins-docker-hub:latest'
             }
         }
+        stage('Deploy to k8s'){
+            steps{
+                kubernetesDeploy (configs: 'deployment.yml',kubeconfigId: 'kubeConfigId')
+
+            }
+        }
 
 
     }
